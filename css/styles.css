@@ -56,15 +56,51 @@ button {
   cursor: pointer;
 }
 
+.visually-hidden {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  color: #2e2f42;
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .heading {
   text-align: center;
   padding: 15px 15px;
+  background: linear-gradient(to bottom, #ccffcc 0%, #ffccff 100%);
+}
+
+.subject {
+  text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.section {
+  padding: 20px 20px;
 }
 
 /* section_01 */
 
 .section_01 {
-  padding: 15px 15px;
+  background: linear-gradient(to bottom, #ffccff 0%, #ccffcc 100%);
+}
+
+.subject {
+  text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
 }
 
 .expanding_cards_wrapper {
@@ -95,7 +131,6 @@ button {
   margin: 5px;
   max-height: 600px;
   overflow: hidden;
-
 }
 
 .panel h3 {
@@ -128,7 +163,15 @@ button {
 /* section_02 */
 
 .section_02 {
-  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(to bottom, #ccffcc 0%, #ffccff 100%);
+}
+
+.ripple-btn-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,11 +239,12 @@ button {
 
 /* ripple_effect-effect */
 .section_03 {
-  padding: 15px 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
+  background: linear-gradient(to bottom, #ffccff 0%, #ccffcc 100%);
 }
 
 .ripple_effect-effect {}
@@ -242,4 +286,144 @@ button {
 
 .ripple-hover-button:active {
   transform: scale(1);
+}
+
+/* section_04 */
+
+.section_04 {
+  background: linear-gradient(to bottom, #ccffcc 0%, #ffccff 100%);
+}
+
+.inverted-border-magic {}
+
+.section {}
+
+.inverted-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.inverted-card-wrapper {
+  position: relative;
+}
+
+.inverted-card {
+  position: relative;
+  filter: drop-shadow(0 0 5px #024120ca);
+}
+
+.inverted-card-image-with-svg-mask {
+  width: 80vw;
+  height: 80vh;
+  background-image: url("/images/inverted/chameleons.avif");
+  background-position: 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  position: relative;
+}
+
+
+/* mask image */
+.inverted-card-image-with-svg-mask {
+  -webkit-mask: url("/images/inverted/top-center.png") center / contain no-repeat, url("/images/inverted/bottom-right.png") center / contain no-repeat, linear-gradient(#000000 0 0);
+  mask-size: 22rem, 30rem;
+  mask-position: top center, bottom right;
+  mask-composite: exclude;
+}
+
+.inverted-text {
+  color: #ffffff;
+  max-width: 355px;
+  position: absolute;
+  /* right: 30px;
+  top: 27px; */
+  font-size: 19px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.inverted-card-image-with-svg-mask .inverted-text {
+  right: 30px;
+  top: 27px;
+}
+
+.inverted-button {
+  position: absolute;
+  background-color: #a9ff7d;
+  border-radius: 1.5rem;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inverted-top-center {
+  width: 240px;
+  height: 95px;
+  top: 1%;
+  right: 0%;
+  left: 0%;
+  margin: 0 auto;
+  filter: drop-shadow(0px -2px 6px #0c6700);
+}
+
+.inverted-top-center .inverted-text {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: url("/images/inverted/chameleons.avif") top / cover no-repeat;
+  background-clip: text;
+  color: transparent;
+  right: 24px;
+  top: 27px;
+}
+
+.inverted-bottom-right {
+  font-size: 19px;
+  height: 160px;
+  border-radius: 2.5rem;
+  bottom: 12px;
+  right: 6px;
+  filter: drop-shadow(4px 6px 6px #0c6700);
+}
+
+.inverted-bottom-right .inverted-text {
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+  top: 0;
+  right: 0;
+}
+
+.inverted-fa-solid {}
+
+.inverted-fa-quote-left .inverted-fa-quote-right {
+  position: absolute;
+  font-size: 40px;
+  color: #f5f5f5;
+}
+
+.inverted-fa-quote-left {
+  top: -35px;
+  left: -10px;
+}
+
+.inverted-fa-quote-right {
+  right: 20px;
+  bottom: -30px;
+}
+
+@media (max-width:1260px) {
+  .inverted-card-image-with-svg-mask .inverted-text {
+    right: 30px;
+    top: 126px;
+    font-size: 16px;
+  }
 }
