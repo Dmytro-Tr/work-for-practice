@@ -56,6 +56,17 @@ button {
   cursor: pointer;
 }
 
+.heading {
+  text-align: center;
+  padding: 15px 15px;
+}
+
+/* section_01 */
+
+.section_01 {
+  padding: 15px 15px;
+}
+
 .expanding_cards_wrapper {
   margin: 0 auto;
   display: flex;
@@ -111,5 +122,76 @@ button {
   .panel:nth-of-type(4),
   .panel:nth-of-type(5) {
     display: none;
+  }
+}
+
+/* section_02 */
+
+.section_02 {
+  padding: 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.ripple_effect {}
+
+.ripple-btn {
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 16px 30px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 5px 5px 10px #485460;
+}
+
+.repple-btn1 {
+  background-color: #1e272e;
+  border: 1px solid #a5b1c2;
+  transition: background-color 200ms ease-in-out;
+}
+
+.repple-btn1:hover {
+  background-color: #281e2e;
+}
+
+.repple-btn2 {
+  background-color: #ffa801;
+  border: 1px solid #d2dae2;
+  transition: background-color 200ms ease-in-out;
+}
+
+.repple-btn2:hover {
+  background-color: #ff9101;
+}
+
+.repple-btn1 .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: animation 0.7s ease-out;
+}
+
+.repple-btn2 .circle {
+  position: absolute;
+  background-color: #485460;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: animation 0.7s ease-out;
+}
+
+@keyframes animation {
+  to {
+    transform: translate(-50%, -50%)scale(3);
+    opacity: 0;
   }
 }
