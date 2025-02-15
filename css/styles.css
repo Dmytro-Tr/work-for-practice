@@ -135,8 +135,6 @@ button {
   gap: 40px;
 }
 
-.ripple_effect {}
-
 .ripple-btn {
   color: #fff;
   font-size: 16px;
@@ -194,4 +192,54 @@ button {
     transform: translate(-50%, -50%)scale(3);
     opacity: 0;
   }
+}
+
+/* ripple_effect-effect */
+.section_03 {
+  padding: 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.ripple_effect-effect {}
+
+.ripple-hover-button {
+  background-color: #1e272e;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 16px 30px;
+  position: relative;
+  overflow: hidden;
+  font-size: 28px;
+}
+
+.ripple-hover-button::before {
+  content: "";
+  position: absolute;
+  background-color: #ffa801;
+  width: 0;
+  height: 0;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: 500ms;
+}
+
+.ripple-hover-button:hover::before {
+  width: 500px;
+  height: 500px;
+}
+
+.ripple-hover-button span {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+}
+
+.ripple-hover-button:active {
+  transform: scale(1);
 }
